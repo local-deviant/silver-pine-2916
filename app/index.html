@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Platinum Planner — GTA VI Trophy Guide &amp; Tracker</title>
+<meta name="description" content="Offline guide and tracker for all 55 Grand Theft Auto VI trophies on PlayStation 5: roadmap to the platinum, missable flags, cited guides, saved progress.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="title">
+    <h1>Leonida Platinum Planner</h1>
+    <p class="sub">GTA VI trophy guide &amp; tracker — all 55 PlayStation 5 trophies · 1 platinum · 2 gold · 6 silver · 46 bronze · fully offline</p>
+  </div>
+  <div class="progress" id="progressBox" aria-label="Overall progress">
+    <div class="progress-line"><span id="progressText">0 of 55 earned</span><span id="progressPct">0%</span></div>
+    <div class="bar"><div class="bar-fill" id="progressFill" style="width:0%"></div></div>
+    <div class="grade-counts" id="gradeCounts"></div>
+  </div>
+</header>
+
+<section class="nextup" id="nextUpBox">
+  <div class="nextup-label">Next up</div>
+  <div class="nextup-body">
+    <strong id="nextUpName">—</strong>
+    <span id="nextUpWhy"></span>
+  </div>
+  <button id="nextUpGo" type="button">Show me</button>
+</section>
+
+<section class="roadmap" id="roadmap" aria-label="Roadmap to the platinum">
+  <h2>Roadmap to the platinum</h2>
+  <p class="roadmap-note">Five stages, in order. <span class="flag-missable">⚑ Missable</span> means the trophy is tied to a story moment or a partner who may not be available later — do it while the moment is open. Mission replay has not been officially confirmed (19 Nov 2026), so flagged trophies are marked “check before you move on”, not “definitely lost”. No online trophies exist in the official list.</p>
+  <div class="stages" id="stages"></div>
+</section>
+
+<section class="controls" aria-label="Filters and tools">
+  <input id="search" type="search" placeholder="Search a trophy by name…" aria-label="Search trophies">
+  <label>Grade
+    <select id="gradeFilter">
+      <option value="all">All grades</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+  </label>
+  <label>Kind
+    <select id="kindFilter">
+      <option value="all">All kinds</option>
+      <option value="story">Story</option>
+      <option value="missable">Missable</option>
+      <option value="collectibles">Collectibles</option>
+      <option value="activities">Activities</option>
+      <option value="meta">Meta (platinum / 100%)</option>
+      <option value="online">Online (none in this list)</option>
+    </select>
+  </label>
+  <label>Status
+    <select id="statusFilter">
+      <option value="all">Earned + not yet</option>
+      <option value="earned">Earned</option>
+      <option value="todo">Not yet earned</option>
+    </select>
+  </label>
+  <label>Stage
+    <select id="stageFilter">
+      <option value="all">All stages</option>
+      <option value="1">Stage 1 — Story</option>
+      <option value="2">Stage 2 — Stranger strands</option>
+      <option value="3">Stage 3 — Activities</option>
+      <option value="4">Stage 4 — Collectibles &amp; counts</option>
+      <option value="5">Stage 5 — Cleanup &amp; platinum</option>
+    </select>
+  </label>
+  <label class="spoiler"><input id="spoilerToggle" type="checkbox"> Hide story spoilers</label>
+  <button id="exportBtn" type="button">Export progress</button>
+  <label class="import">Import progress <input id="importFile" type="file" accept="application/json,.json"></label>
+  <span class="count" id="importStatus" role="status"></span>
+  <span class="count" id="shownCount"></span>
+</section>
+
+<main class="layout">
+  <div class="list-wrap">
+    <table class="list" aria-label="Trophy checklist">
+      <thead><tr><th class="col-check">Earned</th><th>Trophy</th><th>Grade</th><th>Kind</th><th>PSN target</th><th></th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <p class="empty" id="emptyMsg" hidden>No trophies match these filters. Clear the search or change a filter.</p>
+  </div>
+  <aside class="detail" id="detail" aria-label="Trophy guide">
+    <p class="detail-hint" id="detailHint">Click any trophy to read its guide here — official name, description and grade, the guide in our own words, and the sources it cites.</p>
+    <div id="detailBody" hidden>
+      <div class="detail-grade" id="detailGrade"></div>
+      <h3 id="detailName"></h3>
+      <p class="detail-desc" id="detailDesc"></p>
+      <dl class="detail-meta">
+        <div><dt>Kind</dt><dd id="detailKind"></dd></div>
+        <div><dt>Roadmap stage</dt><dd id="detailStage"></dd></div>
+        <div><dt>PSN target</dt><dd id="detailCount"></dd></div>
+        <div><dt>Missable</dt><dd id="detailMissable"></dd></div>
+      </dl>
+      <h4>Guide</h4>
+      <p id="detailGuide"></p>
+      <h4>Sources</h4>
+      <ul class="sources" id="detailSources"></ul>
+      <p class="detail-note">Names, descriptions, grades and PSN targets are exactly as PlayStation publishes them, checked against Exophase and PSNProfiles on 19 Nov 2026. Where no verified step-by-step source exists yet, the guide says so instead of inventing steps.</p>
+      <label class="detail-check"><input id="detailCheck" type="checkbox"> Mark as earned</label>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <p>Leonida Platinum Planner — an original, offline guide. No Rockstar artwork, no game screenshots, no network requests. Trophy names, descriptions and grades are PlayStation's own words; guides are written by the author and cite their sources. Data checked 19 Nov 2026: Exophase &amp; PSNProfiles. 28 of the 55 trophies are hidden on PlayStation until earned; which ones is not shown per trophy on either public list, so this guide does not guess.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
