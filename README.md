@@ -4,55 +4,38 @@
 
 # Leonida Platinum Planner
 
-A GTA VI trophy guide and platinum tracker for the make.fun bounty
-`gta6-trophy-guide-01`: all 55 trophies, a 5-stage roadmap, and a
-checklist that remembers your progress — in one offline page.
+A single offline page that plans your road to the GTA VI platinum for the make.fun bounty `gta6-trophy-guide-01`: the full trophy list, a staged route through it, and a checklist that keeps your progress between visits.
 
-## What it does
+## What is inside
 
-- **55 trophies** with official names, descriptions and grades
-  (1 platinum, 2 gold, 6 silver, 46 bronze), each with a short
-  guide written for this planner and its sources (Exophase and
-  PSNProfiles).
-- **5-stage roadmap**: Story (12) → Stranger strands (7) →
-  Activities (8) → Collectibles & counts (5) → Cleanup & platinum
-  (23), each stage showing its own progress and its missable
-  trophies.
-- **9 missable trophies**, each with the reason it can be missed
-  spelled out from its official description.
-- **Checklist that persists** in localStorage, with a progress bar,
-  per-grade counts, and JSON export / validated import.
-- **Filters and search** by grade, kind, status and stage, plus a
-  **spoiler toggle** that hides the 17 story trophies you have not
-  earned yet.
-- **Next up** button: the earliest stage first, missable trophies
-  prioritised.
+- **Every trophy — 55 of them.** Each one carries its official name, description and grade: 1 platinum, 2 gold, 6 silver and 46 bronze. Every entry also gets a short how-to written for this planner, and the sources it leans on are Exophase and PSNProfiles.
+- **A route in five stages.** Story (12 trophies) first, then Stranger strands (7), Activities (8), Collectibles & counts (5), and finally Cleanup & platinum (23). Each stage tracks its own completion and calls out the trophies you can miss in it.
+- **Missables, flagged plainly.** 9 trophies can be missed; for each one the guide explains why, working from what the official description actually says.
+- **A checklist that remembers.** Ticks are stored in localStorage, so progress survives a reload. A progress bar and per-grade counts sit on top, and you can export your progress as JSON or import a file back in (imports are validated first).
+- **Find things fast.** Search and filter by grade, kind, status and stage. A spoiler toggle hides the 17 story trophies you have not unlocked yet, so the page does not spoil the plot.
+- **"Next up" picks for you.** One button jumps to the next trophy worth chasing — earliest stage first, missable ones before the rest.
 
-Two honest limits: the per-trophy hidden flags are left unset because
-no public source marks them per trophy, and the missable flags are
-reasoned interpretations, not officially confirmed facts — the guide
-says so where it matters instead of guessing.
+Two things this guide does not pretend to know: whether each trophy is hidden (no public source records that per trophy, so the flag is left blank rather than invented) and whether a trophy is truly missable (those calls are reasoned readings of the official text, not confirmed facts — the guide marks them as such wherever it matters).
 
-## Try it
+## Run it locally
 
 ```sh
 node serve.ts
 # open http://localhost:8080
 ```
 
-## Files
+## What is in this repo
 
-- `app/` — the planner (HTML, CSS, ES modules, `app/data/trophies.json`)
-- `screenshots/` — 4 renders from the app itself
-- `main.ts` — entrypoint: hands `app/` and `screenshots/` to the
-  grader and writes `dossier.json`
-- `serve.ts` — tiny static server for local tries
+- `app/` — the planner itself: HTML, CSS, ES modules, and the trophy data at `app/data/trophies.json`
+- `screenshots/` — 4 screenshots taken from the running app
+- `main.ts` — the entrypoint: passes `app/` and `screenshots/` to the grader and writes `dossier.json`
+- `serve.ts` — a small static server for trying it out
 
 ```sh
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
 ```
 
-Node 22, standard library only. No network requests, no tracking.
+Built on Node 22 with the standard library only. It makes no network requests and does no tracking.
 
 > **New to make.fun? Sign up with my referral link:** [https://make.fun/r/njrtxptt](https://make.fun/r/njrtxptt)
 > My referral code is `njrtxptt`.
